@@ -1,0 +1,15 @@
+.layout{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px ;
+    transition: transform 0.3s ease;
+}
+.layout.shiftRight{
+    transform: translateX(200px);
+}
+.layoutContent{
+    width: 810px;
+}

@@ -1,0 +1,22 @@
+.todayContent{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+.todayContent:hover{
+    color: #f07f75;
+    cursor: pointer;
+}
+.todayContent:hover .iconAdd{
+    color: white;
+}
+.iconAdd{
+    color: #de4c4a;
+}
+.labelAdd{
+    color:#808080
+}
+.labelAdd:hover{
+    color: #de4c4a;
+}

@@ -1,0 +1,42 @@
+.sidebarContainer{
+    width: 450px;
+    height: 100vh;
+    padding: 5px 15px;
+    background: #2c2c2c;
+    transition: transform 0.3s ease;
+}
+.show {
+    transform: translateX(0);
+}
+.hide {
+    transform: translateX(-100%);
+}
+.containerBtn{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 8px;
+}
+.OptSideBarContainer{
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+}
+.optSideBar{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+.optSideBar:hover{
+    cursor: pointer;
+    background: #3c3c3c;
+}
+.optSideBar.selected{
+    background: #6e261f;
+    color: #f07f75
+}
+.optSideBar.selected:hover{
+    background: #6e261f;
+}

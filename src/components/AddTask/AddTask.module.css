@@ -1,0 +1,74 @@
+*{
+    box-shadow: none;
+}.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+.containerAddTask{
+    position: absolute;
+    left: 40%;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contentAddTask{
+   background: #2c2c2c;
+    border: 2px solid #3c3c3c;
+    width: 550px;
+    height: 200px;
+    padding: 15px;
+    border-radius: 10px;
+}
+.inpAddTask{
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    color: white;
+    font-weight: 700;
+}
+.inpAddTask:nth-child(1){
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.inpAddTask:nth-child(2){
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.dueDateBtn{
+    gap: 5px;
+    height: 30px;
+    margin-bottom: 15px ;
+    font-size: 14px
+}
+.containerAddTaskBtn{
+    border-top: 2px solid #3c3c3c;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    gap: 15px;
+}
+.btn{
+    height: 35px;
+    color: white;
+    background: #de4c4a;
+    border-color: #de4c4a;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.btn:hover{
+    background-color: #ff6b6b;
+}
+.btn:nth-child(1){
+    background: #2c2c2c;
+    border: 1px solid;
+}
+.btn:nth-child(1):hover{
+    background-color: #3c3c3c;
+}
