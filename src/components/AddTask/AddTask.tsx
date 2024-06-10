@@ -2,7 +2,7 @@ import {InputText} from "primereact/inputtext";
 import styles from "./AddTask.module.css";
 import {Button} from "primereact/button";
 import {useSidebar} from "../../hooks/useSidebar.ts";
-import {SyntheticEvent, useEffect, useRef} from "react";
+import {SyntheticEvent, useEffect, useRef, useState} from "react";
 import {OverlayPanel} from "primereact/overlaypanel";
 import {Calendar} from "../Calendar/Calendar.tsx";
 
@@ -10,6 +10,7 @@ export const AddTask = () => {
     const {optActiveInSidebar,handleActiveIndex} = useSidebar()
     const addTaskContainer = useRef<HTMLDivElement>(null)
     const calendarRef = useRef<OverlayPanel>(null)
+    const [dueDate, setDueDate] = useState<string | null>(null)
     const handleClickOutside = (e:MouseEvent) => {
         if(calendarRef.current && !calendarRef.current.getElement()?.contains(e.target as Node)){
             if (addTaskContainer.current && !addTaskContainer.current.contains(e.target as Node)) {
@@ -20,6 +21,7 @@ export const AddTask = () => {
                     calendarRef.current.hide();
                 } else {
                     handleActiveIndex!(-1);
+                    setDueDate(null)
                 }
             }
         }
@@ -35,6 +37,12 @@ export const AddTask = () => {
             calendarRef.current?.toggle(event);
         }
     };
+    const handleDateSelect = (date: string) => {
+        setDueDate(date);
+        if (calendarRef.current) {
+            calendarRef.current.hide();
+        }
+    }
     return (
         optActiveInSidebar === 0 &&
         <div className={styles.overlay}>
@@ -43,11 +51,11 @@ export const AddTask = () => {
                     <InputText className={styles.inpAddTask} placeholder={'Name of the task'} />
                     <InputText className={styles.inpAddTask} placeholder={'Description'} />
                     <div>
-                        <Button icon={'pi pi-calendar'} label={'Due Date'} className={styles.dueDateBtn} outlined
+                        <Button icon={'pi pi-calendar'} label={dueDate ? `${dueDate}`: 'Due Date'} className={styles.dueDateBtn} outlined
                                 severity={'secondary'} onClick={(event) => {
                                     showOverlayPanel(event)}}
                         />
-                        <Calendar ref={calendarRef}/>
+                        <Calendar ref={calendarRef} onDateSelect={handleDateSelect}/>
                     </div>
                     <div className={styles.containerAddTaskBtn}>
                         <Button label={'Cancel'} outlined className={styles.btn} onClick={() => handleActiveIndex!(-1)}/>

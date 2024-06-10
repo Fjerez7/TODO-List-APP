@@ -1,5 +1,26 @@
 .containerCalendar{
     background-color: #2c2c2c;
 }
-.calendar{
+.containerCalendar div{
+    padding: 0;
 }
+.calendar{
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+
+}
+.timePanel{
+    background: none;
+    border: none;
+}
+.timePanel span{
+    font-size:15px;
+}
+.applyButton{
+    background-color: #de4c4a;
+    color: white;
+    border: none;
+    width: 100%;
+}
+
