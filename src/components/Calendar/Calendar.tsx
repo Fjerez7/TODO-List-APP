@@ -28,7 +28,7 @@ export const Calendar = forwardRef<OverlayPanel,CalendarProps>(
             }
         }
     return (
-        <OverlayPanel ref={ref} className={styles.containerCalendar}>
+        <OverlayPanel ref={ref} className={styles.containerCalendar} >
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Controller
                     name={'date'}

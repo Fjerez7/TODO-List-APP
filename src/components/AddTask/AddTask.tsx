@@ -11,6 +11,7 @@ export const AddTask = () => {
     const addTaskContainer = useRef<HTMLDivElement>(null)
     const calendarRef = useRef<OverlayPanel>(null)
     const [dueDate, setDueDate] = useState<string | null>(null)
+
     const handleClickOutside = (e:MouseEvent) => {
         if(calendarRef.current && !calendarRef.current.getElement()?.contains(e.target as Node)){
             if (addTaskContainer.current && !addTaskContainer.current.contains(e.target as Node)) {
@@ -48,18 +49,22 @@ export const AddTask = () => {
         <div className={styles.overlay}>
             <main className={styles.containerAddTask} ref={addTaskContainer}>
                 <div className={styles.contentAddTask}>
-                    <InputText className={styles.inpAddTask} placeholder={'Name of the task'} />
-                    <InputText className={styles.inpAddTask} placeholder={'Description'} />
-                    <div>
-                        <Button icon={'pi pi-calendar'} label={dueDate ? `${dueDate}`: 'Due Date'} className={styles.dueDateBtn} outlined
-                                severity={'secondary'} onClick={(event) => {
-                                    showOverlayPanel(event)}}
-                        />
-                        <Calendar ref={calendarRef} onDateSelect={handleDateSelect}/>
-                    </div>
+                    <InputText className={styles.inpAddTask} placeholder={'Name of the task'}/>
+                    <InputText className={styles.inpAddTask} placeholder={'Description'}/>
+                    <Button icon={'pi pi-calendar'} label={dueDate ? `${dueDate}` : 'Due Date'}
+                            className={styles.dueDateBtn} outlined
+                            severity={'secondary'} onClick={(event) => {
+                        showOverlayPanel(event)
+                    }}
+                    />
+                    <Calendar ref={calendarRef} onDateSelect={handleDateSelect}/>
                     <div className={styles.containerAddTaskBtn}>
-                        <Button label={'Cancel'} outlined className={styles.btn} onClick={() => handleActiveIndex!(-1)}/>
-                        <Button label={'Add Task'} className={styles.btn} />
+                        <Button label={'Cancel'} outlined className={styles.btn}
+                                onClick={() => {
+                                    setDueDate(null)
+                                    handleActiveIndex!(-1)
+                                }}/>
+                        <Button label={'Add Task'} className={styles.btn}/>
                     </div>
                 </div>
             </main>
