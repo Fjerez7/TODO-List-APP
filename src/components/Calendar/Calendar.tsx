@@ -36,7 +36,7 @@ export const Calendar = forwardRef<OverlayPanel,CalendarProps>(
                     render={({field}) => (
                         <CalendarPrime inline className={styles.calendar} value={field.value} showTime hourFormat={'12'}
                                        onChange={(e) => field.onChange(e.value!)}
-                                       panelClassName={styles.timePanel} dateFormat={'MM/dd/yy'}
+                                       panelClassName={styles.timePanel} dateFormat={'MM/dd/yy'} id={'date-picker'}
                         />
                     )}
                 />
