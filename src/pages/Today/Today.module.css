@@ -1,14 +1,14 @@
-.todayContent{
+.btnAddTask{
     margin-top: 30px;
     display: flex;
     align-items: center;
     gap: 12px
 }
-.todayContent:hover{
+.btnAddTask:hover{
     color: #f07f75;
     cursor: pointer;
 }
-.todayContent:hover .iconAdd{
+.btnAddTask:hover .iconAdd{
     color: white;
 }
 .iconAdd{
@@ -19,4 +19,9 @@
 }
 .labelAdd:hover{
     color: #de4c4a;
+}
+.addTaskModal{
+    position: relative;
+    bottom: 20px;
+    background: #121212;
 }
