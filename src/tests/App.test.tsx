@@ -8,7 +8,6 @@ describe("App component", () => {
     const optionsSidebar= [
         {label: 'Add Task', icon: 'pi pi-plus-circle',},
         {label: 'Search', icon: 'pi pi-search'},
-        {label: 'Inbox', icon: 'pi pi-inbox'},
         {label: 'Today', icon: 'pi pi-calendar-times'},
         {label: 'Upcoming', icon: 'pi pi-calendar'},
     ]

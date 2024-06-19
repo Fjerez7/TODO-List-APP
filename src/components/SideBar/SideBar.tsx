@@ -10,7 +10,6 @@ export const SideBar = () => {
     const optionsSidebar= [
         {label: 'Add Task', icon: 'pi pi-plus-circle'},
         {label: 'Search', icon: 'pi pi-search'},
-        {label: 'Inbox', icon: 'pi pi-inbox',url:'/inbox'},
         {label: 'Today', icon: 'pi pi-calendar-times',url:'today'},
         {label: 'Upcoming', icon: 'pi pi-calendar',url:'/upcoming'},
     ]
